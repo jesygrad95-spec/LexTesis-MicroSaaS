@@ -1,0 +1,13 @@
+{
+  "name": "lextesis-microsaas",
+  "version": "1.0.0",
+  "description": "Proxy for Gemini API on Vercel.",
+  "main": "api/gemini-proxy.js",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^0.1.0"
+  },
+  "scripts": {
+    "start": "vercel dev"
+  }
+}
