@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexTesis AI - Esquema Personalizado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        /* Colores adaptados para la nueva estructura dinámica */
+        .step-item.active {
+            background-color: #e9ecef;
+            border-left-color: #9333ea; /* Purple primary color for adaptability */
+        }
+        .step-item.active .step-circle {
+            background-color: #9333ea;
+            color: white;
+        }
+        .step-item.active .step-title {
+            color: #9333ea;
+            font-weight: 700;
+        }
+        .step-connector {
+            width: 2px;
+            background-color: #dee2e6;
+            margin-left: 1.10rem;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Custom styles for section titles */
+        .section-tag-config { background-color: #ffe4e6; color: #e11d48; } /* Rosa para Config */
+        .section-tag-i { background-color: #e3f2fd; color: #1e88e5; }
+        .section-tag-ii { background-color: #e8f5e9; color: #43a047; }
+        .section-tag-iii { background-color: #fff3e0; color: #fb8c00; }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #9333ea;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">LexTesis AI - Arquitectura Flexible</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-4xl mx-auto text-gray-600">
+                **Paso 0:** Define tu esquema universitario para adaptar el flujo de trabajo y la terminología de la IA.
+            </p>
+        </header>
+
+        <main class="w-full max-w-7xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                <div class="md:grid md:grid-cols-12 md:gap-8">
+                    
+                    <aside id="stepper-navigation" class="md:col-span-4 lg:col-span-3 mb-8 md:mb-0">
+                        <div class="flex flex-col">
+                            <!-- Nuevo Paso 0 -->
+                            <h3 class="text-sm font-bold uppercase text-gray-500 tracking-wider mb-4">CONFIGURACIÓN BASE</h3>
+                             <div data-step="0" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200 active">
+                                <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-center mr-4 transition-colors duration-200">0</div>
+                                <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Definir Esquema</p></div>
+                            </div>
+                            <div class="h-6 step-connector"></div>
+
+                            <!-- Pasos Dinámicos -->
+                            <h3 class="text-sm font-bold uppercase text-gray-500 tracking-wider mt-8 mb-4">FLUJO DE TRABAJO DINÁMICO</h3>
+                            <!-- Los pasos dinámicos se generarán/actualizarán aquí -->
+                            <div id="dynamic-steps">
+                                <!-- Contenido inicial predefinido o cargado -->
+                                <div data-step="1" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">1</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Realidad y Problema</p></div>
+                                </div>
+                                <div class="h-6 step-connector"></div>
+                                <div data-step="2" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">2</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Marco Teórico</p></div>
+                                </div>
+                                <div class="h-6 step-connector"></div>
+                                <div data-step="3" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">3</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Objetivos y Justificación</p></div>
+                                </div>
+                                <div class="h-6 step-connector"></div>
+                                <div data-step="4" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">4</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Metodología</p></div>
+                                </div>
+                                <div class="h-6 step-connector"></div>
+                                <div data-step="5" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">5</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Instrumentos y Análisis</p></div>
+                                </div>
+                                <div class="h-6 step-connector"></div>
+                                <div data-step="6" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                                    <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">6</div>
+                                    <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">Administración y Anexos</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    
+                    <section id="content-display" class="md:col-span-8 lg:col-span-9">
+                        
+                        <!-- Step 0: CONFIGURACIÓN DEL ESQUEMA -->
+                        <div id="step-content-0" class="step-content fade-in">
+                            <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-config mb-4">CONFIGURACIÓN BASE</div>
+                            <h2 class="text-2xl font-bold mb-1 text-gray-900">Paso 0: Definir Esquema Universitario</h2>
+                            <p class="text-gray-600 mb-6">Introduzca a continuación el listado **exacto y ordenado** de los puntos principales (y si es posible, subpuntos) de su esquema de tesis. Esto adaptará la navegación y la terminología de la IA.</p>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">📋 Esquema Personalizado</h4>
+                                    <textarea id="input-esquema-personalizado" rows="10" class="w-full p-2 border border-gray-300 rounded-lg text-sm font-mono" placeholder="Ejemplo:&#10;I. INTRODUCCIÓN&#10;  1.1 Realidad Problemática&#10;  1.2 Formulación del Problema&#10;  1.3 Objetivos&#10;II. METODOLOGÍA&#10;  2.1 Tipo y Diseño&#10;  2.2 Población y Muestra&#10;... (Continúe con todos los puntos de su universidad)&#10;&#10;NOTA: El esquema USS ya está precargado como ejemplo."></textarea>
+                                    <button id="save-esquema-btn" class="mt-3 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                                        Aplicar Esquema y Continuar al Paso 1
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1: Realidad Problemática y Formulación del Problema (Mapeado Dinámicamente) -->
+                        <div id="step-content-1" class="step-content hidden">
+                            <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-i mb-4" id="section-tag-1">I. INTRODUCCIÓN</div>
+                            <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-1">Paso 1: Delimitación del Problema</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-1">Genera las bases para la Realidad Problemática (1.1) y la Formulación del Problema (1.4).</p>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">👤 Input del Usuario</h4>
+                                    <textarea id="input-problema" rows="4" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Describa el área de estudio, la controversia legal y el marco contextual de su investigación."></textarea>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">⚙️ Acción de Gemini (Prompt Engineering)</h4>
+                                    <p>Se aplica un prompt de "Síntesis y Delimitación" para formular la interrogante principal y el Título (máx. 20 palabras).</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                    <h4 class="font-bold text-lg mb-2 text-blue-800">💡 Output de LexTesis AI</h4>
+                                    <p class="text-blue-700">Genera: 1) El Título, 2) La Realidad Problemática inicial y 3) La Formulación del Problema, usando la terminología de tu esquema.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Justificación y Objetivos (1.5, 1.6) - Con LLM -->
+                        <div id="step-content-3" class="step-content hidden">
+                            <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-i mb-4" id="section-tag-3">I. INTRODUCCIÓN</div>
+                            <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-3">Paso 3: Definición de Objetivos (LLM Asistido)</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-3">Define los Objetivos y la Justificación. Incluye asistencia LLM para Objetivos Específicos.</p>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">👤 Input del Usuario</h4>
+                                    <input type="text" id="input-objetivo-general" class="w-full p-2 border border-gray-300 rounded-lg mb-3" placeholder="Ingrese el Objetivo General (Verbo en infinitivo)">
+                                    <div id="objetivos-output" class="p-2 bg-white border border-dashed rounded-lg text-sm text-gray-600 min-h-[50px]">
+                                        Los objetivos específicos generados por Gemini aparecerán aquí.
+                                    </div>
+                                    <button id="generate-objectives-btn" class="mt-3 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                                        <span id="loading-obj" class="hidden spinner"></span>
+                                        ✨ Generar Objetivos Específicos
+                                    </button>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">⚙️ Acción de Gemini (API CALL)</h4>
+                                    <p>Gemini formula 3 objetivos específicos, alineados con el diseño cualitativo (verbos como 'Comprender', 'Interpretar', 'Analizar').</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                    <h4 class="font-bold text-lg mb-2 text-blue-800">💡 Output de LexTesis AI</h4>
+                                    <p class="text-blue-700">Genera el borrador de la Justificación y los resultados de la generación LLM para los Objetivos Específicos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Instrumentos, Recolección y Análisis (2.4, 2.5, 2.6) - Con LLM -->
+                        <div id="step-content-5" class="step-content hidden">
+                            <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-ii mb-4" id="section-tag-5">II. MATERIAL Y MÉTODO</div>
+                            <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-5">Paso 5: Instrumentos de Recolección (LLM Asistido)</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-5">Genera el contenido para Técnicas, Procedimientos y Análisis de Datos. Incluye asistencia LLM para el instrumento (ANEXOS).</p>
+                             <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">👤 Input del Usuario</h4>
+                                    <input type="text" id="input-tecnica" class="w-full p-2 border border-gray-300 rounded-lg mb-3" placeholder="Técnica de recolección (ej. Entrevista a profundidad, Análisis documental)">
+                                    <div id="questions-output" class="p-2 bg-white border border-dashed rounded-lg text-sm text-gray-600 min-h-[50px]">
+                                        El borrador de preguntas para el instrumento aparecerá aquí.
+                                    </div>
+                                     <button id="generate-questions-btn" class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition-colors flex items-center justify-center">
+                                         <span id="loading-q" class="hidden spinner"></span>
+                                        ✨ Generar Preguntas Guía (Borrador de Instrumento)
+                                    </button>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">⚙️ Acción de Gemini (API CALL)</h4>
+                                    <p>Genera un set de 10 preguntas iniciales, basadas en el problema (del paso 1) y la técnica, optimizadas para obtener datos ricos cualitativos.</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                    <h4 class="font-bold text-lg mb-2 text-blue-800">💡 Output de LexTesis AI</h4>
+                                    <p class="text-blue-700">Genera: 1) La descripción de Técnicas e Instrumentos, 2) El Procedimiento de recolección/análisis y 3) Las Preguntas Guía (ANEXOS).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content for other steps (2, 4, 6) will be simplified/dynamic to focus on the new structure -->
+                        <div id="step-content-2" class="step-content hidden">
+                           <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-i mb-4" id="section-tag-2">I. INTRODUCCIÓN</div>
+                           <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-2">Paso 2: Marco Teórico</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-2">Genera la base académica para los Trabajos Previos y las Teorías Relacionadas, usando la terminología de tu esquema.</p>
+                             <div class="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
+                                <h4 class="font-bold text-lg mb-2 text-yellow-800">📚 Guía Teórica</h4>
+                                <p class="text-yellow-700">En este paso, la IA se enfoca en el punto de tu esquema que pide **Trabajos Previos / Antecedentes** y **Bases Teóricas**, asegurando que la búsqueda simulada priorice fuentes indexadas como pide la USS.</p>
+                                <input type="text" class="w-full p-2 mt-3 border border-gray-300 rounded-lg" placeholder="Confirme los conceptos clave para la búsqueda de antecedentes (ej: 'Nulidad de oficio' y 'Debido proceso').">
+                            </div>
+                        </div>
+
+                        <div id="step-content-4" class="step-content hidden">
+                           <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-ii mb-4" id="section-tag-4">II. MATERIAL Y MÉTODO</div>
+                           <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-4">Paso 4: Metodología y Muestreo</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-4">Define los componentes metodológicos esenciales: Tipo, Diseño, Escenario y Sujetos, usando la terminología de tu esquema.</p>
+                            <div class="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
+                                <h4 class="font-bold text-lg mb-2 text-yellow-800">🎯 Guía Metodológica</h4>
+                                <p class="text-yellow-700">La IA se centra en redactar los puntos de tu esquema que piden el **Tipo y Diseño de Estudio** (cualitativo) y la **Caracterización de Sujetos / Muestreo**, asegurando la coherencia entre ellos.</p>
+                                <input type="text" class="w-full p-2 mt-3 border border-gray-300 rounded-lg" placeholder="Defina el diseño cualitativo (e.g., Etnografía, Estudio de caso).">
+                            </div>
+                        </div>
+
+                        <div id="step-content-6" class="step-content hidden">
+                            <div class="inline-block px-3 py-1 text-sm font-semibold rounded-full section-tag-iii mb-4" id="section-tag-6">III. ADMINISTRACIÓN y ÉTICA</div>
+                            <h2 class="text-2xl font-bold mb-1 text-gray-900" id="step-title-6">Paso 6: Aspectos Administrativos, Ética y Anexos</h2>
+                            <p class="text-gray-600 mb-6" id="step-description-6">Genera las secciones administrativas (Presupuesto, Cronograma, etc.) y los Criterios Éticos, usando la terminología de tu esquema.</p>
+                             <div class="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
+                                <h4 class="font-bold text-lg mb-2 text-yellow-800">✅ Guía Administrativa</h4>
+                                <p class="text-yellow-700">La IA estructura las tablas para los puntos de tu esquema que piden **Recursos**, **Presupuesto** y **Cronograma**, además de redactar la sección de **Ética**.</p>
+                                <button id="show-modal-btn" class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                                    Ver Aviso de Similitud (Normativa USS)
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            </div>
+             <footer class="text-center mt-10">
+                <div class="bg-white rounded-2xl shadow-lg p-6 max-w-2xl mx-auto">
+                    <h3 class="text-xl font-bold text-gray-900">Adaptabilidad Metodológica</h3>
+                    <p class="mt-2 text-gray-600">El proceso se ajusta a la estructura académica de **tu universidad**, manteniendo la potencia de generación del LLM.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal (Unchanged) -->
+    <div id="ethics-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg mx-auto transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-red-600">⚠️ Aviso Legal y de Similitud (Turnitin)</h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-6">
+                <p class="mb-4 text-gray-700">Este output es un borrador de protocolo. Debe ser verificado humanamente. Las normativas académicas requieren:</p>
+                <ol class="list-decimal list-inside space-y-3 text-gray-600">
+                    <li><span class="font-semibold text-gray-800">Reporte de Similitud:</span> Debe obtener el Reporte Turnitin para generar el Acta de Revisión de Similitud y validar que el porcentaje detectado no es plagio.</li>
+                    <li><span class="font-semibold text-gray-800">Citas de Calidad:</span> Asegúrese de que sus referencias cumplan con los criterios de bases de datos indexadas (Scopus/WoS, si aplica).</li>
+                    <li><span class="font-semibold text-gray-800">Criterios Éticos:</span> Incluir la aplicación de la Declaración de Helsinki/Reporte Belmont si la investigación es con seres humanos.</li>
+                </ol>
+                <p class="mt-6 text-sm text-center text-gray-500 font-medium">LexTesis AI no sustituye la revisión final del docente o el Comité de Ética.</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-b-2xl text-right">
+                <button id="accept-modal-btn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-lg transition-colors">
+                    Acepto
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DEFAULT_ESQUEMA = `
+I. INTRODUCCIÓN
+  1.1 Realidad Problemática
+  1.2 Trabajos Previos (Antecedentes)
+  1.3 Teorías Relacionadas al Tema
+  1.4 Formulación del Problema
+  1.5 Justificación e Importancia
+  1.6 Objetivos
+II. MATERIAL Y MÉTODO
+  2.1 Tipo y Diseño de Estudio
+  2.2 Escenario
+  2.3 Caracterización de Sujetos
+  2.4 Técnicas e Instrumentos
+  2.5 Procedimiento para la recolección de datos
+  2.6 Procedimiento de análisis de datos
+  2.7 Criterios Éticos
+III. ASPECTOS ADMINISTRATIVOS
+  3.1 Recursos Humanos y Presupuesto
+  3.2 Financiamiento
+  3.3 Cronograma
+IV. REFERENCIAS
+V. ANEXOS
+`;
+            
+            const ESQUEMA_MAP = [
+                { step: 1, titleKey: "Problema", defaultTitle: "Realidad y Problema", defaultDesc: "Genera Título, Realidad Problemática (1.1) y Formulación del Problema (1.4).", sectionTag: "I. INTRODUCCIÓN" },
+                { step: 2, titleKey: "Marco Teórico", defaultTitle: "Marco Teórico y Antecedentes", defaultDesc: "Genera Trabajos Previos (1.2) y Teorías Relacionadas (1.3).", sectionTag: "I. INTRODUCCIÓN" },
+                { step: 3, titleKey: "Objetivos", defaultTitle: "Justificación y Definición de Objetivos", defaultDesc: "Define Justificación (1.5) y Objetivos (1.6).", sectionTag: "I. INTRODUCCIÓN" },
+                { step: 4, titleKey: "Metodología", defaultTitle: "Metodología: Tipo, Diseño y Muestra", defaultDesc: "Define Tipo, Diseño (2.1), Escenario (2.2) y Sujetos (2.3).", sectionTag: "II. MATERIAL Y MÉTODO" },
+                { step: 5, titleKey: "Instrumentos", defaultTitle: "Instrumentos, Recolección y Análisis", defaultDesc: "Genera Técnicas, Instrumentos (2.4), Procedimiento (2.5) y Análisis (2.6).", sectionTag: "II. MATERIAL Y MÉTODO" },
+                { step: 6, titleKey: "Administrativos", defaultTitle: "Aspectos Administrativos, Ética y Anexos", defaultDesc: "Genera Criterios Éticos (2.7), Aspectos Administrativos (III) y listado de Anexos.", sectionTag: "III. ASPECTOS ADMINISTRATIVOS" }
+            ];
+
+            const inputEsquemaPersonalizado = document.getElementById('input-esquema-personalizado');
+            const saveEsquemaBtn = document.getElementById('save-esquema-btn');
+            const dynamicStepsContainer = document.getElementById('dynamic-steps');
+            const stepperNavigation = document.getElementById('stepper-navigation');
+            
+            // --- Gemini API Configuration ---
+            const apiKey = ""; 
+            const apiUrl = (model) => `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+            const modelName = 'gemini-2.5-flash-preview-05-20';
+            
+            const contentPanels = document.querySelectorAll('.step-content');
+            const inputObjetivoGeneral = document.getElementById('input-objetivo-general');
+            const generateObjectivesBtn = document.getElementById('generate-objectives-btn');
+            const objetivosOutput = document.getElementById('objetivos-output');
+            const loadingObj = document.getElementById('loading-obj');
+
+            const inputProblema = document.getElementById('input-problema');
+            const inputTecnica = document.getElementById('input-tecnica');
+            const generateQuestionsBtn = document.getElementById('generate-questions-btn');
+            const questionsOutput = document.getElementById('questions-output');
+            const loadingQ = document.getElementById('loading-q');
+
+            const modal = document.getElementById('ethics-modal');
+            const modalContent = document.getElementById('modal-content');
+            const showModalBtn = document.getElementById('show-modal-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const acceptModalBtn = document.getElementById('accept-modal-btn');
+
+            // --- Funciones de Utilidad ---
+
+            // Utility function for exponential backoff
+            const fetchWithRetry = async (url, options, retries = 3) => {
+                for (let i = 0; i < retries; i++) {
+                    try {
+                        const response = await fetch(url, options);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response;
+                    } catch (error) {
+                        if (i === retries - 1) throw error;
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                }
+            };
+
+            const parseEsquema = (esquemaText) => {
+                const lines = esquemaText.trim().split('\n').filter(line => line.trim() !== '');
+                const titles = lines.map(line => line.replace(/^\s*\d+(\.\d+)*\s*/, '').trim());
+                return titles;
+            };
+
+            const handleStepClick = (e) => {
+                const stepItem = e.target.closest('.step-item');
+                if (stepItem && stepItem.dataset.step) {
+                    switchTab(stepItem.dataset.step);
+                }
+            };
+            
+            const switchTab = (stepNumber) => {
+                // Ensure all step items are retrieved freshly for the current state
+                const currentStepItems = stepperNavigation.querySelectorAll('.step-item');
+                
+                currentStepItems.forEach(item => {
+                    if (item.dataset.step === stepNumber) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+
+                contentPanels.forEach(panel => {
+                    if (panel.id === `step-content-${stepNumber}`) {
+                        panel.classList.remove('hidden');
+                        panel.classList.add('fade-in');
+                    } else {
+                        panel.classList.add('hidden');
+                        panel.classList.remove('fade-in');
+                    }
+                });
+            };
+
+            const attachEventListeners = () => {
+                // Clear and re-attach listeners to ensure they catch the new dynamic elements
+                const allStepItems = stepperNavigation.querySelectorAll('.step-item');
+                
+                allStepItems.forEach(item => {
+                    // Remove existing listeners to prevent duplicates
+                    item.removeEventListener('click', handleStepClick); 
+                    // Add the click handler
+                    item.addEventListener('click', handleStepClick);
+                });
+            };
+            
+            // --- Funciones de Adaptación y Renderizado ---
+            
+            const updateDynamicSteps = (esquemaText) => {
+                const parsedTitles = parseEsquema(esquemaText);
+
+                // Clear previous steps
+                dynamicStepsContainer.innerHTML = '';
+
+                // Generate new dynamic steps
+                ESQUEMA_MAP.forEach(mapItem => {
+                    // Find the best match for the step title based on keywords
+                    const matchingLine = parsedTitles.find(title => 
+                        mapItem.titleKey.split('/').some(key => title.toUpperCase().includes(key.toUpperCase()))
+                    );
+
+                    const stepTitle = matchingLine || mapItem.defaultTitle;
+                    
+                    // Create step navigation element
+                    const stepNavHtml = `
+                        <div data-step="${mapItem.step}" class="step-item flex items-center p-3 cursor-pointer border-l-4 border-transparent hover:bg-gray-100 rounded-r-lg transition-colors duration-200">
+                            <div class="step-circle w-10 h-10 rounded-full bg-gray-200 text-gray-600 font-bold flex items-center justify-content: center mr-4 transition-colors duration-200">${mapItem.step}</div>
+                            <div><p class="step-title font-semibold text-gray-700 transition-colors duration-200">${stepTitle}</p></div>
+                        </div>
+                        <div class="h-6 step-connector"></div>
+                    `;
+                    dynamicStepsContainer.insertAdjacentHTML('beforeend', stepNavHtml);
+
+                    // Update content panel titles
+                    const contentPanel = document.getElementById(`step-content-${mapItem.step}`);
+                    if (contentPanel) {
+                        document.getElementById(`step-title-${mapItem.step}`).textContent = `Paso ${mapItem.step}: ${stepTitle}`;
+                        // Simplify description to reflect customization
+                        document.getElementById(`step-description-${mapItem.step}`).textContent = `Contenido generado para los puntos de tu esquema relacionados con: ${stepTitle}.`;
+                        // Update section tag (approximation based on major sections)
+                        document.getElementById(`section-tag-${mapItem.step}`).textContent = mapItem.sectionTag;
+                    }
+                });
+                
+                // Remove the last connector
+                const lastConnector = dynamicStepsContainer.querySelector('.step-connector:last-child');
+                if(lastConnector) lastConnector.remove();
+                
+                // Re-attach event listeners after DOM update
+                attachEventListeners();
+            };
+
+            // --- Lógica de LLM (MOVIDA AQUÍ PARA RESOLVER EL REFRERENCE ERROR) ---
+
+            // Function to generate Specific Objectives (Paso 3, LLM)
+            const generateObjectives = async () => {
+                const objetivoGeneral = inputObjetivoGeneral.value.trim();
+                const objetivosTitle = document.getElementById('step-title-3').textContent; // Get current title
+
+                if (!objetivoGeneral) {
+                    objetivosOutput.innerHTML = '<p class="text-red-500">Por favor, ingrese el Objetivo General para generar los específicos.</p>';
+                    return;
+                }
+
+                loadingObj.classList.remove('hidden');
+                generateObjectivesBtn.disabled = true;
+                objetivosOutput.innerHTML = '<p class="text-gray-500"><span class="spinner"></span> Generando objetivos específicos...</p>';
+
+                const systemPrompt = `Eres un asistente de metodología de investigación cualitativa. Formula 3 objetivos específicos coherentes, medibles y alineados con el objetivo general. Utiliza verbos en infinitivo cualitativos. La respuesta debe ser una lista numerada sin ninguna otra explicación o introducción. El esquema del usuario lo pide como: ${objetivosTitle}`;
+                const userQuery = `Objetivo General: ${objetivoGeneral}. Genera los 3 Objetivos Específicos para un proyecto de investigación cualitativa.`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                try {
+                    const response = await fetchWithRetry(apiUrl(modelName), {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || 'Error al generar los objetivos.';
+                    
+                    const htmlText = text.split('\n').map(line => {
+                        if (line.match(/^\d+\.\s/)) {
+                            return `<li class="ml-4">${line.substring(line.indexOf('.') + 1).trim()}</li>`;
+                        }
+                        return '';
+                    }).join('');
+
+                    objetivosOutput.innerHTML = `<h5 class="font-bold text-gray-800">${objetivosTitle.split(':').pop().trim()} Sugeridos:</h5><ol class="list-decimal list-inside space-y-1">${htmlText}</ol>`;
+
+                } catch (error) {
+                    console.error('Gemini API Error:', error);
+                    objetivosOutput.innerHTML = '<p class="text-red-500">Error en la comunicación con la IA. Intente nuevamente.</p>';
+                } finally {
+                    loadingObj.classList.add('hidden');
+                    generateObjectivesBtn.disabled = false;
+                }
+            };
+
+            // Function to generate Interview Questions (Paso 5, LLM)
+            const generateQuestions = async () => {
+                const problema = inputProblema.value.trim(); // Assume Step 1 input holds the problem context
+                const tecnica = inputTecnica.value.trim() || 'Entrevista a profundidad';
+
+                if (!problema) {
+                    questionsOutput.innerHTML = '<p class="text-red-500">Por favor, complete la descripción del problema en el Paso 1 para generar preguntas relevantes.</p>';
+                    return;
+                }
+
+                loadingQ.classList.remove('hidden');
+                generateQuestionsBtn.disabled = true;
+                questionsOutput.innerHTML = `<p class="text-gray-500"><span class="spinner"></span> Generando borrador de preguntas para la ${tecnica}...</p>`;
+
+                const systemPrompt = `Eres un experto en metodología cualitativa. Basado en el problema de investigación, genera una lista de 10 preguntas guía o temas clave para una ${tecnica}. Las preguntas deben ser abiertas y diseñadas para obtener información rica y profunda. Responde únicamente con una lista numerada de las 10 preguntas.`;
+                const userQuery = `Problema de Investigación: ${problema}. Técnica: ${tecnica}. Genera 10 preguntas clave.`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
+
+                try {
+                    const response = await fetchWithRetry(apiUrl(modelName), {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text || 'Error al generar las preguntas.';
+                    
+                    const htmlText = text.split('\n').map(line => {
+                        if (line.match(/^\d+\.\s/)) {
+                            return `<li class="ml-4">${line.substring(line.indexOf('.') + 1).trim()}</li>`;
+                        }
+                        return '';
+                    }).join('');
+
+                    questionsOutput.innerHTML = `<h5 class="font-bold text-gray-800">Borrador de Preguntas Guía (ANEXOS):</h5><ol class="list-decimal list-inside space-y-1">${htmlText}</ol>`;
+
+                } catch (error) {
+                    console.error('Gemini API Error:', error);
+                    questionsOutput.innerHTML = '<p class="text-red-500">Error en la comunicación con la IA. Intente nuevamente.</p>';
+                } finally {
+                    loadingQ.classList.add('hidden');
+                    generateQuestionsBtn.disabled = false;
+                }
+            };
+
+            // --- Lógica de Manejo de Eventos ---
+
+            const saveEsquema = () => {
+                currentEsquema = inputEsquemaPersonalizado.value.trim();
+                localStorage.setItem('customEsquema', currentEsquema);
+                updateDynamicSteps(currentEsquema);
+                switchTab('1'); // Go to the first functional step after configuration
+            };
+            
+            generateObjectivesBtn.addEventListener('click', generateObjectives);
+            generateQuestionsBtn.addEventListener('click', generateQuestions);
+            saveEsquemaBtn.addEventListener('click', saveEsquema);
+            
+            // --- Carga Inicial y Ejecución ---
+
+            let currentEsquema = localStorage.getItem('customEsquema') || DEFAULT_ESQUEMA;
+            inputEsquemaPersonalizado.value = currentEsquema;
+
+            // Apply initial/saved esquema
+            updateDynamicSteps(currentEsquema);
+            
+            // --- Modal Logic ---
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modalContent.classList.add('scale-95', 'opacity-0');
+                 setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            };
+
+            if (showModalBtn) showModalBtn.addEventListener('click', openModal);
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (acceptModalBtn) acceptModalBtn.addEventListener('click', closeModal);
+            if(modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Start on the configuration step
+            switchTab('0');
+        });
+    </script>
+</body>
+</html>
